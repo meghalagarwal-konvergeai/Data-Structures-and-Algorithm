@@ -1,6 +1,3 @@
-from numpy import size
-
-
 class Tree_Node:
     def __init__(self, key):
         self.key = key
