@@ -1,3 +1,10 @@
+'''
+Merge Sort divides the list into 2.
+Then compare 2 divided list on each iteration with each other and store it in sorted list.
+This continues till all the elements of both the list are exusted.
+If any one list is exusted early then the remaining list is add at the last.
+'''
+
 def merge(nums1, nums2):
     merged = []
     i, j = 0, 0
