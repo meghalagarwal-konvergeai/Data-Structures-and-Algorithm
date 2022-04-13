@@ -1,5 +1,6 @@
 # Defining a class to store the values
 class User:
+    # Creating a Constructor Function
     def __init__(self, username, name, email):
         self.username = username
         self.name = name

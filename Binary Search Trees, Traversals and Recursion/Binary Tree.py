@@ -7,6 +7,7 @@ and it's easy to locate a specific key by traversing a single path down from the
 '''
 # Defines a Tree
 class Tree_Node:
+    # Creating a Constructor Function
     def __init__(self, key):
         self.key = key
         self.left = None

@@ -1,4 +1,5 @@
 class Tree_Node:
+    # Creating a Constructor Function
     def __init__(self, key):
         self.key = key
         self.left = None
