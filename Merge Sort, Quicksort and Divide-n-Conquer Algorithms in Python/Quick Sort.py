@@ -4,7 +4,8 @@ Quick Sort considers Pivot point in the list which is the last element of the li
 and then considers 2 points at the start of the list and at the end-1 of the list.
 These 2 pointers are then compared with the pivot value and swap the element left side or right side of the list based on the smaller or greater element.
 This process is then recursive till the entire list is sorted.
-Time Complexity of Quick Sort is O(n log n)
+Time Complexity of Quick Sort is O(n^2)
+Space Complexity of Quick Sort is O(1)
 '''
 
 def partition(nums, start, end):

@@ -1,3 +1,9 @@
+'''
+Time Complexity of Bubble Sort is O(n^2)
+Space Complexity of Bubble Sort is O(n) because the space required to store the inputs is also considered
+while calculating space complexity.
+'''
+
 def bubble_sort(nums):
     # Create a copy of the list, to avoid changing it
     nums = list(nums)
