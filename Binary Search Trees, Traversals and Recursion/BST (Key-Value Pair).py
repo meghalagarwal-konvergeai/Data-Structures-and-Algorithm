@@ -1,3 +1,20 @@
+'''
+Keys and Values:
+Each node of the tree stores a key (a username) and a value (a User object).
+Only keys are shown in the picture above for brevity.
+A binary tree where nodes have both a key and a value is often referred to as a map or treemap (because it maps keys to values).
+
+Binary Search Tree:
+The left subtree of any node only contains nodes with keys that are lexicographically smaller than the node's key,
+and the right subtree of any node only contains nodes with keys that lexicographically larger than the node's key.
+A tree that satisfies this property is called a binary search trees,
+and it's easy to locate a specific key by traversing a single path down from the root note.
+
+Balanced Tree:
+The tree is balanced i.e. it does not skew too heavily to one side or the other.
+The left and right subtrees of any node shouldn't differ in height/depth by more than 1 level.
+'''
+# Defining a Binary Search Tree with Key, Value Pairs
 class BSTNode():
     def __init__(self, key, value=None):
         self.key = key
@@ -6,6 +23,7 @@ class BSTNode():
         self.right = None
         self.parent = None
 
+#Inserting the values in Ascending Order
 def insert(node, key, value):
     if node is None:
         node = BSTNode(key, value)
@@ -17,6 +35,7 @@ def insert(node, key, value):
         node.right.parent = node
     return node
 
+# Chceking the whether the value exists
 def find(node, key):
     if node is None:
         return None
@@ -27,6 +46,7 @@ def find(node, key):
     if(key > node.key):
         return find(node.right, key)
 
+# Updates the value if it exists
 def update(node, key, value):
     target = find(node, key)
     if target is not None:
@@ -34,11 +54,13 @@ def update(node, key, value):
     else:
         print("Node Does not Exists")
 
+# Prints the enitre list
 def list_all(node):
     if node is None:
         return []
     return list_all(node.left) + [(node.key, node.value)] + list_all(node.right)
 
+#Checks whether the Tree is a Balanced Tree
 def is_balanced(node):
     if node is None:
         return True, 0
@@ -50,9 +72,7 @@ def is_balanced(node):
 
     return balanced, height
 
-'''
-The below function is to make a Balanced tree based on Binary Search Algorithm but it waork with the Sorted Array/list
-'''
+# The below function is to make a Balanced tree based on Binary Search Algorithm but it waork with the Sorted Array/list
 def make_balanced_bst(data, low = 0, high = None, parent = None):
     if high is None:
         high = len(data)-1
@@ -61,7 +81,6 @@ def make_balanced_bst(data, low = 0, high = None, parent = None):
     
     mid = (low+high)//2
     key, value = data[mid]
-
     root = BSTNode(key, value)
     root.parent = parent
     root.left = make_balanced_bst(data, low, mid-1, root)
@@ -69,9 +88,7 @@ def make_balanced_bst(data, low = 0, high = None, parent = None):
 
     return root
 
-'''
-To Balanace an Un-balanced tree using Binary Search Tree
-'''
+# To Balanace an Un-balanced tree using Binary Search Tree
 def balanced_tree(node):
     return make_balanced_bst(list_all(node))
 
