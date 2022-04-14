@@ -1,4 +1,8 @@
-
+'''
+BFS can be applied to all the problem of graphs if there are not weights available.
+Time Complexity of BFS is O(m+n)
+'''
+# Defines and Creates a Graph
 class Graph:
     def __init__(self, num_nodes, edges):
         self.num_nodes = num_nodes
@@ -15,13 +19,12 @@ class Graph:
     def __str__(self):
         return self.__repr__()
 
-
+# BFS Algorithm Starts Here
 def bfs(graph, root):
     queue = []
     discovered = [False] * len(graph.data)
     distance = [None] * len(graph.data)
     parent = [None] * len(graph.data)
-
     discovered[root] = True
     queue.append(root)
     distance[root] = 0

@@ -1,3 +1,8 @@
+'''
+Time Complexity of DFS is O(m+n)
+'''
+
+# Defines and Creates a Graph
 class Graph:
     def __init__(self, num_nodes, edges):
         self.num_nodes = num_nodes
@@ -14,11 +19,11 @@ class Graph:
     def __str__(self):
         return self.__repr__()
 
+# DFS Algorigm Starts here
 def dfs(graph, root):
     stack = []
     discovered = [False * len(graph.data)]
     result = []
-
     stack.appen(root)
 
     while len(stack) > 0:
