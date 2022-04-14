@@ -1,6 +1,3 @@
-from time import time
-
-
 '''
 Stepwise Process:
 --> Create a table of size (n+1) * (capacity+1) consisting of all 0s, where is n is the number of elements. 
