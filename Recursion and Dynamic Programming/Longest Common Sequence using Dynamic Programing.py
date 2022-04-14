@@ -22,6 +22,7 @@ Time Complexity of Dynamic Programing if O(n1 * n2)
 
 def lcq_dp(seq1, seq2):
     n1, n2 = len(seq1), len(seq2)
+    # Creating a Matrix based on the length of both the strings
     results = [[0 for _ in range(n2+1)] for _ in range(n1+1)]
     for i in range(n1):
         for j in range(n2):
