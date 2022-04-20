@@ -15,7 +15,7 @@ The tree is balanced i.e. it does not skew too heavily to one side or the other.
 The left and right subtrees of any node shouldn't differ in height/depth by more than 1 level.
 '''
 # Defining a Binary Search Tree with Key, Value Pairs
-class BSTNode():
+class BSTNode:
     # Creating a Constructor Function
     def __init__(self, key, value=None):
         self.key = key
