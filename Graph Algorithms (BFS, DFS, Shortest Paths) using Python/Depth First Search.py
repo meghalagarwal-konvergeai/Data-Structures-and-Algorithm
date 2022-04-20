@@ -20,29 +20,26 @@ class Graph:
         return self.__repr__()
 
 # DFS Algorigm Starts here
-def dfs(graph, root):
-    stack = []
-    discovered = [False * len(graph.data)]
+def dfs(graph, source):
+    visited = [False] * len(graph.data)
+    stack = [source]
     result = []
-    stack.appen(root)
-
+    
     while len(stack) > 0:
         current = stack.pop()
-        # Check whether the root node is already visited and Stacked
-        if not discovered[current]:
-            discovered[current] = True
+        if not visited[current]:
             result.append(current)
-            for node in graph.data[current]:
-                # Check whether the leaf nodes are already visited and Stacked
-                if not discovered[node]:
-                    stack.append(node)
-    
+            visited[current] = True
+            for v in graph.data[current]:
+                stack.append(v)
+                
     return result
 
 if __name__ == "__main__":
     num_nodes = 5
     graph = [(0,1),(0,4),(1,2),(1,3),(1,4),(2,3),(3,4)]
 
-    gph = Graph(num_nodes, graph)
-
-    print(gph)
+    g1 = Graph(num_nodes, graph)
+    bf_search = dfs(g1, 0)
+    print(g1)
+    print(bf_search)
