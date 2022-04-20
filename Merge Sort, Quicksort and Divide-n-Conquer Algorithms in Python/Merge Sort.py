@@ -14,9 +14,9 @@ def merge(nums1, nums2):
     i, j = 0, 0
 
     # Loop over the two lists
-    while i < len(nums1) and j <len(nums2):
+    while i < len(nums1) and j < len(nums2):
         # Include the smaller element in the result and move to next element
-        if(nums1[i]<=nums2[j]):
+        if(nums1[i] <= nums2[j]):
             merged.append(nums1[i])
             i += 1
         else:

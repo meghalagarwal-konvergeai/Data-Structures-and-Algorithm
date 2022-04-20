@@ -6,7 +6,7 @@ Time Complexity of BFS is O(m+n)
 class Graph:
     def __init__(self, num_nodes, edges):
         self.num_nodes = num_nodes
-        self.data = [[] for _ in range(len(num_nodes))]
+        self.data = [[] for _ in range(num_nodes)]
         # Creating Adjusent nodes whichh are linked to them 
         for n1, n2 in edges:
             self.data[n1].append(n2)

@@ -21,8 +21,7 @@ def knapsack_memo(capacity, weights, profits):
         elif weights[idx] > remaining:
             memo[key] = recurse(idx+1, remaining)
         else:
-            memo[key] = max(recurse(idx+1, remaining), 
-                            profits[idx] + recurse(idx+1, remaining-weights[idx]))
+            memo[key] = max(recurse(idx+1, remaining), profits[idx] + recurse(idx+1, remaining-weights[idx]))
         return memo[key] 
         
     return recurse(0, capacity)
